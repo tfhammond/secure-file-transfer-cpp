@@ -1,11 +1,10 @@
-// src/main.cpp
 #include <iostream>
 #include "encrypt.hpp"
 #include "decrypt.hpp"
 
 int main(int argc, char** argv) {
     if (argc != 5) {
-        std::cerr << "Usage: encrypt <encrypt|decrypt> <input> <output> <keyfile>\n";
+        std::cerr << "Usage: sfencrypt <encrypt|decrypt> <input> <output> <keyfile>" << std::endl;
         return 1;
     }
     std::string mode = argv[1];
@@ -20,7 +19,7 @@ int main(int argc, char** argv) {
         ok = decrypt_file(in_path, out_path, key_path);
     } else {
         std::cerr << "Error: unknown mode '" << mode << "'.\n";
-        std::cerr << "Usage: encrypt <encrypt|decrypt> <input> <output> <keyfile>\n";
+        std::cerr << "Usage: sfencrypt <encrypt|decrypt> <input> <output> <keyfile>" << std::endl;
         return 1;
     }
 
