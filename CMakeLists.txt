@@ -17,16 +17,4 @@ add_executable(secureft
     src/encrypt.cpp
     src/decrypt.cpp
 )
-
-#install(TARGETS secureft
-  #RUNTIME DESTINATION bin
-#)
-
-
-#set_target_properties(secureft PROPERTIES
- # RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
-  #RUNTIME_OUTPUT_DIRECTORY_DEBUG   "${CMAKE_SOURCE_DIR}"
- # RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_SOURCE_DIR}"
-#)
-# Link OpenSSL Crypto library
 target_link_libraries(secureft PRIVATE OpenSSL::Crypto)
