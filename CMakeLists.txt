@@ -12,9 +12,11 @@ find_package(OpenSSL REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Build "encrypt" executable
-add_executable(secureft
+add_executable(sfencrypt
     src/main.cpp
     src/encrypt.cpp
     src/decrypt.cpp
 )
-target_link_libraries(secureft PRIVATE OpenSSL::Crypto)
+
+# Link OpenSSL Crypto library
+target_link_libraries(sfencrypt PRIVATE OpenSSL::Crypto)
