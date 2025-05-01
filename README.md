@@ -1,4 +1,4 @@
-**Secureft: Secure File Transfer Tool (C++ AES-256-GCM)**
+**Secureft: Secure File Encryptor Tool (C++ AES-256-GCM)**
 
 A simple command‑line utility to encrypt and decrypt files using AES-256 in GCM mode.
 
@@ -17,8 +17,8 @@ Libraries: OpenSSL
 **Installation & Build**
 1. Clone the repository:
 ```
-git clone https://github.com/tfhammond/secure-file-transfer-cpp.git
-cd secure-file-transfer-cpp
+git clone https://github.com/tfhammond/secure-file-encryptor-cpp.git
+cd secure-file-encryptor-cpp
 ```
 2. Make build directory
 ```
@@ -37,7 +37,7 @@ cmake --build . --config Debug
 **Usage:**
 Command Syntax
 ```
-.\build\Debug\secureft.exe <mode> <input-file> <output-file> <key-file>
+.\build\Debug\sfencrypt.exe <mode> <input-file> <output-file> <key-file>
 ```
 `<mode>`
 - `encrypt` - Encrypts the input file into an authenticated ciphertext
@@ -58,13 +58,13 @@ Command Syntax
 **Examples**
 
 **Encrypting a txt file**
-`.\build\Debug\secureft.exe encrypt report.txt report.bin report.key`
+`.\build\Debug\sfencrypt.exe encrypt report.txt report.bin report.key`
 - Input: `report.txt`
 - Output: `report.bin` (ciphertext + 16-byte GCM tag)
 - Key file: `report.key` (32-byte key + 12-byte IV)
 
 **Decrypting the txt file**
-`.\build\Debug\secureft.exe decrypt report.bin report_decrypted.txt report.key`
+`.\build\Debug\sfencrypt.exe decrypt report.bin report_decrypted.txt report.key`
 - Input: `report.bin`
 - Output: `report_decrypted.txt` (original file restored)
 - Key file: `report.key`
